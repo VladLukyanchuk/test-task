@@ -1,0 +1,54 @@
+<template>
+  <button class="action-button action-button_active" :class="{inherit: inherit}" :disabled="disabled">
+    <slot></slot>
+  </button>
+</template>
+
+<script>
+export default {
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    inherit: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  data() {
+    return {
+        test: 1
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.action-button {
+  font-family: Roboto, sans-serif;
+  width: 190px;
+  height: 40px;
+  box-shadow: none;
+  background: radial-gradient(50% 50% at 50% 50%, #ffc700 0%, #ffc700 100%);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #0d0c11;
+  text-align: center;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  text-transform: uppercase;
+  &:disabled {
+    background: #dadada;
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+    color: #8e8e8e;
+  }
+}
+.inherit {
+  color: white;
+  background:none;
+  border: 2px solid #ffffff;
+}
+</style>
