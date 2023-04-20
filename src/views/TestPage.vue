@@ -134,7 +134,7 @@ export default {
   data() {
     return {
       form: {},
-      index: 8,
+      index: 0,
       list: null,
       answer: "",
     };

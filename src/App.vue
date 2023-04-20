@@ -18,6 +18,9 @@ export default {
   },
   components: { Header, Navigation },
   methods: {},
+  mounted() {
+    this.$router.push({ path: '/' })
+  }
 };
 </script>
 

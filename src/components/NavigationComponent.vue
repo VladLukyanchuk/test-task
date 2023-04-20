@@ -22,6 +22,7 @@
         <ul>
           <li
             class="nav-item"
+            @click.prevent="this.$emit('close')"
             :class="{ 'nav-item_active': currentPath === item.name }"
             v-for="item in links"
             :key="item.title"
@@ -51,7 +52,7 @@ export default {
         },
         {
           title: "Пройти тест",
-          link: "/",
+          link: "/test",
           name: "test",
         },
       ],
