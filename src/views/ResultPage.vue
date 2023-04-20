@@ -51,12 +51,18 @@
       </button>
     </div>
     <div class="result__data" v-if="person">
-        <h3>Информация</h3>
-        <p class="result__data-text" v-for="(value, name) in person" :key="name"> 
+      <h3>Информация</h3>
+      <p class="result__data-text" v-for="(value, name) in person" :key="name">
         {{ name }}: <span>{{ value }}</span>
-        </p>
+      </p>
     </div>
   </section>
+  <footer>
+    <div class="footer-content">
+        <p>TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN</p>
+        <p>FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI,</p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -71,10 +77,10 @@ export default {
   },
   methods: {
     async makeRequest() {
-        let response =  await fetch('https://swapi.dev/api/people/1/')
-        let personObj = await response.json();
-        this.person = personObj
-    }
+      let response = await fetch("https://swapi.dev/api/people/1/");
+      let personObj = await response.json();
+      this.person = personObj;
+    },
   },
   mounted() {
     this.timerId = setInterval(() => {
@@ -181,18 +187,31 @@ export default {
   }
 }
 .result__data {
-    padding: 15px;
-    background: url("@/assets/rain_bk2.png");
-    h3 {
-        font-size: 1.2rem;
-        text-align: center;
-        margin: 15px 0;
-    }
+  padding: 15px;
+  background: url("@/assets/rain_bk2.png");
+  h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px 0;
+  }
 }
 .result__data-text {
-    margin: 10px 0;
-    span {
-        margin-left: 20px;
-    }
+  margin: 10px 0;
+  span {
+    margin-left: 20px;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+}
+
+.footer-content {
+  height: 100%;
+  overflow: scroll;
 }
 </style>
