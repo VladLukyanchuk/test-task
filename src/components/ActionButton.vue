@@ -28,11 +28,13 @@ export default {
 .action-button {
   font-family: Roboto, sans-serif;
   width: 190px;
+  outline: none;
   height: 40px;
   box-shadow: none;
   background: radial-gradient(50% 50% at 50% 50%, #ffc700 0%, #ffc700 100%);
   border-radius: 20px;
   font-weight: 700;
+  -webkit-tap-highlight-color: transparent; 
   font-size: 14px;
   line-height: 18px;
   color: #0d0c11;

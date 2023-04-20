@@ -7,7 +7,7 @@
           <h1 class="main-section__title">Тест на определение IQ</h1>
         </div>
         <div class="main-section__button">
-          <action-button class="main-section__btn">Далее</action-button>
+          <action-button @click="openTest" class="main-section__btn">Далее</action-button>
           <h3 class="main-section__text">
             <span class="main-section__text_accent">
               И получите рекомендации по развитию своего интеллекта</span
@@ -37,7 +37,7 @@
         <div class="you-get-section__image">
           <img src="@/assets/325-01.png" alt="brain" />
         </div>
-        <action-button class="you-get-section__btn">Пройти тест</action-button>
+        <action-button @click="openTest" class="you-get-section__btn">Пройти тест</action-button>
       </div>
     </section>
     <section class="time-section">
@@ -54,7 +54,7 @@
             любовного.
           </p>
         </div>
-        <action-button class="time-section__btn" :inherit="true">
+        <action-button @click="openTest" class="time-section__btn" :inherit="true">
           пройти тест
         </action-button>
       </div>
@@ -86,7 +86,7 @@
 export default {
   methods: {
     openTest() {
-      
+      this.$router.push('test')
     }
   }
 };
